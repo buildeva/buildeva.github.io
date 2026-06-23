@@ -21,8 +21,8 @@
       </a>
       <nav class="nav" aria-label="Main navigation">
         <a href="#services" class="nav-link">Services</a>
+        <a href="#solutions" class="nav-link">Products</a>
         <a href="#support" class="nav-link">Contact</a>
-        <a href="#privacy" class="nav-link">Privacy</a>
       </nav>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
         <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -146,125 +146,151 @@
       </div>
     </section>
 
-    <!-- Contact / Support Section -->
-    <section class="section section--alt" id="support">
+    <!-- Solutions Section -->
+    <section class="section section--alt" id="solutions">
       <div class="container">
-        <div class="section-label">Get in touch</div>
-        <h2 class="section-title">Ready to build something?</h2>
-        <p class="section-desc">Whether you have a fully scoped idea or just a rough concept, we're happy to talk through what's possible.</p>
-        <div class="support-grid">
+        <div class="section-label">Our products</div>
+        <h2 class="section-title">Product examples</h2>
+        <p class="section-desc">A few products we designed, built, and run ourselves.</p>
 
-          <div class="support-card">
-            <div class="support-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-              </svg>
+        <div class="products-filter" role="tablist" aria-label="Filter products">
+          <button class="products-filter-btn is-active" type="button" data-products-filter="all" aria-pressed="true">All</button>
+          <button class="products-filter-btn" type="button" data-products-filter="applications" aria-pressed="false">Applications</button>
+          <button class="products-filter-btn" type="button" data-products-filter="others" aria-pressed="false">Others</button>
+        </div>
+
+        <div class="solutions-grid">
+          <article class="solution-card solution-card--featured" data-collapsible data-product-category="applications">
+            <button
+              class="solution-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="totalnotePanel"
+            >
+              <div class="solution-top">
+                <div class="solution-icon">📱</div>
+                <div>
+                  <h3 class="solution-title">TotalNote</h3>
+                  <p class="solution-subtitle">iOS productivity app</p>
+                </div>
+              </div>
+              <span class="arrow solution-chevron" aria-hidden="true">▾</span>
+            </button>
+
+            <div class="solution-panel" id="totalnotePanel" hidden>
+              <p class="solution-desc">
+                A notes app that calculates totals while you type.
+              </p>
+              <ul class="solution-list">
+                <li>Real-time totals in notes</li>
+                <li>iCloud sync across devices</li>
+                <li>Fast, clean writing experience</li>
+              </ul>
+              <a href="https://apps.apple.com/app/id0000000000" class="solution-link solution-appstore-link" aria-label="TotalNote App Store link placeholder">
+                <img
+                  src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83"
+                  alt="Download on the App Store"
+                  class="solution-appstore-badge"
+                />
+              </a>
             </div>
-            <h3 class="support-title">Start a conversation</h3>
-            <p class="support-desc">Tell us about your idea, your timeline, and your budget. No pitch deck required — a few paragraphs is enough to get started.</p>
-            <a href="mailto:hello@buildeva.com" class="support-link">hello@buildeva.com →</a>
-          </div>
+          </article>
 
-          <div class="support-card">
-            <div class="support-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
-              </svg>
+          <article class="solution-card" data-product-category="applications">
+            <button
+              class="solution-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="focusflowPanel"
+            >
+              <div class="solution-top">
+                <div class="solution-icon">🌐</div>
+                <div>
+                  <h3 class="solution-title">FocusFlow</h3>
+                  <p class="solution-subtitle">Web productivity tool</p>
+                </div>
+              </div>
+              <span class="arrow solution-chevron" aria-hidden="true">▾</span>
+            </button>
+            <div class="solution-panel" id="focusflowPanel" hidden>
+              <p class="solution-desc">A lightweight workspace for planning weekly priorities and tracking progress.</p>
             </div>
-            <h3 class="support-title">Book a discovery call</h3>
-            <p class="support-desc">Schedule a free 30-minute call with our team to walk through your idea, ask questions, and get a rough estimate.</p>
-            <a href="mailto:hello@buildeva.com?subject=Discovery call" class="support-link">Book a call →</a>
-          </div>
+          </article>
 
-          <div class="support-card">
-            <div class="support-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
-              </svg>
+          <article class="solution-card" data-product-category="others">
+            <button
+              class="solution-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="briefkitPanel"
+            >
+              <div class="solution-top">
+                <div class="solution-icon">🧩</div>
+                <div>
+                  <h3 class="solution-title">BriefKit</h3>
+                  <p class="solution-subtitle">Project brief assistant</p>
+                </div>
+              </div>
+              <span class="arrow solution-chevron" aria-hidden="true">▾</span>
+            </button>
+            <div class="solution-panel" id="briefkitPanel" hidden>
+              <p class="solution-desc">A simple tool that turns early product ideas into clear build-ready briefs.</p>
             </div>
-            <h3 class="support-title">Project brief template</h3>
-            <p class="support-desc">Not sure what to include? Download our simple brief template to structure your idea before reaching out.</p>
-            <a href="mailto:hello@buildeva.com?subject=Send me the brief template" class="support-link">Get the template →</a>
-          </div>
-
-          <div class="support-card">
-            <div class="support-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/>
-              </svg>
-            </div>
-            <h3 class="support-title">FAQ</h3>
-            <p class="support-desc">How long does an MVP take? What do you charge? Do you work with non-technical founders? We answer the big ones here.</p>
-            <a href="mailto:hello@buildeva.com?subject=FAQ" class="support-link">Read the FAQ →</a>
-          </div>
-
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Privacy Section -->
-    <section class="section" id="privacy">
+    <!-- Contact / Support Section -->
+    <section class="section section--alt" id="support">
       <div class="container">
-        <div class="section-label">How we work</div>
-        <h2 class="section-title">Your IP, your code, your product</h2>
-        <p class="section-desc">We believe the software we build for you belongs entirely to you — no lock-in, no hidden strings.</p>
-        <div class="privacy-grid">
-
-          <div class="privacy-item">
-            <div class="privacy-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              </svg>
-            </div>
-            <div>
-              <div class="privacy-title">Full IP ownership</div>
-              <div class="privacy-desc">Everything we build is yours from day one. You own the code, the design assets, and all intellectual property — no exceptions.</div>
-            </div>
+        <div class="section-label">Get in touch</div>
+        <h2 class="section-title">Ready to build?</h2>
+        <p class="section-desc">Start the conversation and we’ll help shape your idea into a product.</p>
+        <div class="support-cta">
+          <p class="support-cta-text">Tell us what you’re building, your timeline, and your goals. We’ll reply with next steps and a clear plan.</p>
+          <div class="support-cta-actions">
+            <a href="mailto:hello@buildeva.com?subject=Start%20the%20conversation" class="btn btn-primary">Start the conversation</a>
           </div>
-
-          <div class="privacy-item">
-            <div class="privacy-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-              </svg>
-            </div>
-            <div>
-              <div class="privacy-title">NDA on day one</div>
-              <div class="privacy-desc">We sign a mutual NDA before any discovery conversation. Your idea stays confidential throughout.</div>
-            </div>
-          </div>
-
-          <div class="privacy-item">
-            <div class="privacy-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-              </svg>
-            </div>
-            <div>
-              <div class="privacy-title">Transparent pricing</div>
-              <div class="privacy-desc">Fixed-scope quotes, no surprise invoices. You know exactly what you're paying before we write a single line of code.</div>
-            </div>
-          </div>
-
-          <div class="privacy-item">
-            <div class="privacy-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
-              </svg>
-            </div>
-            <div>
-              <div class="privacy-title">Clean, documented code</div>
-              <div class="privacy-desc">We hand off well-structured, documented repositories so your future team can pick up where we leave off without friction.</div>
-            </div>
-          </div>
-
+          <p class="support-cta-note">Typical response time: within 1 business day.</p>
         </div>
-        <div class="privacy-links">
-          <a href="#" class="privacy-doc-link">Privacy Policy</a>
-          <span class="dot">·</span>
-          <a href="#" class="privacy-doc-link">Terms of Service</a>
-          <span class="dot">·</span>
-          <a href="#" class="privacy-doc-link">NDA Template</a>
+      </div>
+    </section>
+    
+
+    <!-- Terms & Privacy (collapsed by default) -->
+    <section class="section" id="terms">
+      <div class="container">
+        <div class="terms-stack">
+          <details class="terms-accordion terms-accordion--plain" data-hash="terms-service">
+          <summary class="terms-summary">Read Terms of Service <span class="arrow terms-arrow" aria-hidden="true">▾</span></summary>
+          <div class="terms-body">
+            <p>By using Buildeva services, you agree to the following basic terms:</p>
+            <ul>
+              <li>Project scope, timeline, and deliverables are defined in writing before development starts.</li>
+              <li>Client provides timely feedback and approvals to keep milestones on track.</li>
+              <li>All invoices are payable according to agreed payment terms.</li>
+              <li>Unless otherwise stated, final project code and assets are transferred to the client after full payment.</li>
+              <li>Either party may end the engagement with written notice, with payment due for completed work.</li>
+              <li>Buildeva is not liable for indirect damages, lost profits, or third-party service outages.</li>
+            </ul>
+            <p class="terms-note">For a full legal agreement, contact us at <a href="mailto:hello@buildeva.com">hello@buildeva.com</a>.</p>
+          </div>
+          </details>
+
+          <details class="terms-accordion privacy-accordion" id="privacy-policy-accordion" data-hash="privacy-policy">
+            <summary class="terms-summary">Privacy Policy <span class="arrow terms-arrow" aria-hidden="true">▾</span></summary>
+            <div class="terms-body" id="privacy-policy">
+              <p>We collect only the information you share when contacting us (for example via email).</p>
+              <ul>
+                <li>No account is required to browse this website.</li>
+                <li>Project materials you share are treated as confidential.</li>
+                <li>We do not sell personal data to third parties.</li>
+                <li>You can request data deletion by emailing us.</li>
+              </ul>
+              <p class="terms-note">For full details, contact <a href="mailto:hello@buildeva.com">hello@buildeva.com</a>.</p>
+            </div>
+          </details>
         </div>
       </div>
     </section>
@@ -276,14 +302,15 @@
     <div class="container footer-inner">
       <div class="footer-brand">
         <img src="logo.png" alt="" class="logo-mark logo-mark--sm" />
-        <span class="footer-copy">© 2025 Buildeva. All rights reserved.</span>
+        <span class="footer-copy">© <span id="currentYear"></span> Buildeva. All rights reserved.</span>
       </div>
       <div class="footer-links">
-        <a href="#services" class="footer-link">Services</a>
-        <a href="#support" class="footer-link">Contact</a>
-        <a href="#privacy" class="footer-link">Privacy</a>
-        <a href="mailto:hello@buildeva.com" class="footer-link">hello@buildeva.com</a>
-      </div>
+        <a href="#terms-service" class="privacy-doc-link">Terms &amp; Services</a>
+        <span class="dot">·</span>
+        <a href="#privacy-policy" class="privacy-doc-link">Privacy</a>
+        <span class="dot">·</span>
+        <a href="mailto:hello@buildeva.com" class="privacy-doc-link">hello@buildeva.com</a>
+      </div>      
     </div>
   </footer>
 
