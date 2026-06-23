@@ -1,1 +1,292 @@
-<p>website</p>
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buildeva — From Idea to Product</title>
+  <meta name="description" content="Buildeva is a software house that turns your idea into a live product. We design and build MVPs fast, so you can validate, launch, and grow." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <img src="logo.png" alt="Buildeva logo" class="logo-mark" />
+        <span class="logo-name">Buildeva</span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#support" class="nav-link">Contact</a>
+        <a href="#privacy" class="nav-link">Privacy</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+        </svg>
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero / Description -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-badge">From idea to product</div>
+        <h1 class="hero-title">We build your MVP<br><em>in weeks, not months.</em></h1>
+        <p class="hero-desc">Buildeva is a software house for founders and startups. Share your idea — we'll design, build, and ship a real product you can put in front of users and investors.</p>
+        <div class="hero-actions">
+          <a href="mailto:hello@buildeva.com" class="btn btn-primary">Start a project</a>
+          <a href="#services" class="btn btn-ghost">See what we do</a>
+        </div>
+        <div class="hero-stat-row">
+          <div class="hero-stat">
+            <span class="stat-num">40+</span>
+            <span class="stat-label">MVPs shipped</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="stat-num">4 wks</span>
+            <span class="stat-label">Average to launch</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Founder-owned code</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-label">What we build</div>
+        <h2 class="section-title">Everything from zero to launch</h2>
+        <p class="section-desc">We cover the full stack — strategy, design, and engineering — so you don't need to hire a team before you have a product.</p>
+        <div class="apps-grid">
+
+          <div class="app-card">
+            <div class="app-icon app-icon--ios">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+              </svg>
+            </div>
+            <div class="app-info">
+              <div class="app-name">MVP Development</div>
+              <div class="app-sub">Idea → live product</div>
+            </div>
+            <p class="app-detail">We scope, design, and build your core product in a focused sprint — fast enough to validate before the market moves.</p>
+            <a href="mailto:hello@buildeva.com" class="app-btn">
+              Get started
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </a>
+          </div>
+
+          <div class="app-card">
+            <div class="app-icon app-icon--android">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+              </svg>
+            </div>
+            <div class="app-info">
+              <div class="app-name">Web &amp; Mobile Apps</div>
+              <div class="app-sub">Cross-platform</div>
+            </div>
+            <p class="app-detail">SaaS dashboards, consumer apps, internal tools — we build for web, iOS, and Android with a single shared codebase where it makes sense.</p>
+            <a href="mailto:hello@buildeva.com" class="app-btn">
+              Learn more
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </a>
+          </div>
+
+          <div class="app-card">
+            <div class="app-icon app-icon--web">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14M12 2v2M12 20v2M2 12h2M20 12h2"/>
+              </svg>
+            </div>
+            <div class="app-info">
+              <div class="app-name">Product Design</div>
+              <div class="app-sub">UX, UI &amp; prototyping</div>
+            </div>
+            <p class="app-detail">From user flows to high-fidelity screens, we design products that are intuitive to use and impressive to show investors.</p>
+            <a href="mailto:hello@buildeva.com" class="app-btn">
+              Learn more
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </a>
+          </div>
+
+          <div class="app-card">
+            <div class="app-icon app-icon--mac">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+              </svg>
+            </div>
+            <div class="app-info">
+              <div class="app-name">Scale &amp; Handoff</div>
+              <div class="app-sub">Post-launch support</div>
+            </div>
+            <p class="app-detail">Once you've validated, we help you scale the architecture, onboard your internal team, or stay on as a long-term engineering partner.</p>
+            <a href="mailto:hello@buildeva.com" class="app-btn">
+              Learn more
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / Support Section -->
+    <section class="section section--alt" id="support">
+      <div class="container">
+        <div class="section-label">Get in touch</div>
+        <h2 class="section-title">Ready to build something?</h2>
+        <p class="section-desc">Whether you have a fully scoped idea or just a rough concept, we're happy to talk through what's possible.</p>
+        <div class="support-grid">
+
+          <div class="support-card">
+            <div class="support-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+            </div>
+            <h3 class="support-title">Start a conversation</h3>
+            <p class="support-desc">Tell us about your idea, your timeline, and your budget. No pitch deck required — a few paragraphs is enough to get started.</p>
+            <a href="mailto:hello@buildeva.com" class="support-link">hello@buildeva.com →</a>
+          </div>
+
+          <div class="support-card">
+            <div class="support-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+            </div>
+            <h3 class="support-title">Book a discovery call</h3>
+            <p class="support-desc">Schedule a free 30-minute call with our team to walk through your idea, ask questions, and get a rough estimate.</p>
+            <a href="mailto:hello@buildeva.com?subject=Discovery call" class="support-link">Book a call →</a>
+          </div>
+
+          <div class="support-card">
+            <div class="support-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+              </svg>
+            </div>
+            <h3 class="support-title">Project brief template</h3>
+            <p class="support-desc">Not sure what to include? Download our simple brief template to structure your idea before reaching out.</p>
+            <a href="mailto:hello@buildeva.com?subject=Send me the brief template" class="support-link">Get the template →</a>
+          </div>
+
+          <div class="support-card">
+            <div class="support-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/>
+              </svg>
+            </div>
+            <h3 class="support-title">FAQ</h3>
+            <p class="support-desc">How long does an MVP take? What do you charge? Do you work with non-technical founders? We answer the big ones here.</p>
+            <a href="mailto:hello@buildeva.com?subject=FAQ" class="support-link">Read the FAQ →</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy Section -->
+    <section class="section" id="privacy">
+      <div class="container">
+        <div class="section-label">How we work</div>
+        <h2 class="section-title">Your IP, your code, your product</h2>
+        <p class="section-desc">We believe the software we build for you belongs entirely to you — no lock-in, no hidden strings.</p>
+        <div class="privacy-grid">
+
+          <div class="privacy-item">
+            <div class="privacy-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="privacy-title">Full IP ownership</div>
+              <div class="privacy-desc">Everything we build is yours from day one. You own the code, the design assets, and all intellectual property — no exceptions.</div>
+            </div>
+          </div>
+
+          <div class="privacy-item">
+            <div class="privacy-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+            </div>
+            <div>
+              <div class="privacy-title">NDA on day one</div>
+              <div class="privacy-desc">We sign a mutual NDA before any discovery conversation. Your idea stays confidential throughout.</div>
+            </div>
+          </div>
+
+          <div class="privacy-item">
+            <div class="privacy-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <div>
+              <div class="privacy-title">Transparent pricing</div>
+              <div class="privacy-desc">Fixed-scope quotes, no surprise invoices. You know exactly what you're paying before we write a single line of code.</div>
+            </div>
+          </div>
+
+          <div class="privacy-item">
+            <div class="privacy-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+              </svg>
+            </div>
+            <div>
+              <div class="privacy-title">Clean, documented code</div>
+              <div class="privacy-desc">We hand off well-structured, documented repositories so your future team can pick up where we leave off without friction.</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="privacy-links">
+          <a href="#" class="privacy-doc-link">Privacy Policy</a>
+          <span class="dot">·</span>
+          <a href="#" class="privacy-doc-link">Terms of Service</a>
+          <span class="dot">·</span>
+          <a href="#" class="privacy-doc-link">NDA Template</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="logo.png" alt="" class="logo-mark logo-mark--sm" />
+        <span class="footer-copy">© 2025 Buildeva. All rights reserved.</span>
+      </div>
+      <div class="footer-links">
+        <a href="#services" class="footer-link">Services</a>
+        <a href="#support" class="footer-link">Contact</a>
+        <a href="#privacy" class="footer-link">Privacy</a>
+        <a href="mailto:hello@buildeva.com" class="footer-link">hello@buildeva.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
