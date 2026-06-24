@@ -16,12 +16,12 @@
   <header class="header" id="header">
     <div class="header-inner">
       <a href="/" class="logo">
-        <span class="logo-mark">B</span>
-        <span class="logo-name">Buildeva</span>
+        <img src="logo.png" alt="Buildeva" class="logo-img" />
       </a>
+      <span class="header-site-name" aria-hidden="true">Buildeva</span>
       <nav class="nav" id="mainNav" aria-label="Main navigation">
         <a href="#services" class="nav-link">Services</a>
-        <a href="#solutions" class="nav-link">Products</a>
+        <a href="#products" class="nav-link">Products</a>
         <a href="#support" class="nav-link">Contact</a>
       </nav>
       <div class="header-actions">
@@ -43,7 +43,7 @@
     <!-- Mobile drawer -->
     <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
       <a href="#services" class="mobile-nav-link">Services</a>
-      <a href="#solutions" class="mobile-nav-link">Products</a>
+      <a href="#products" class="mobile-nav-link">Products</a>
       <a href="#support" class="mobile-nav-link">Contact</a>
     </div>
   </header>
@@ -162,282 +162,12 @@
     <!-- Products Section -->
     <section class="section section--alt" id="products">
       <div class="container">
-        <div class="section-label">What we've shipped</div>
-        <h2 class="section-title">Products built by Buildeva</h2>
-        <p class="section-desc">A selection of MVPs and products we've taken from early concept to live — across different industries and stacks.</p>
+        <div class="section-label">What we've built</div>
+        <h2 class="section-title">Our apps &amp; open-source tools</h2>
+        <p class="section-desc">Apps on the App Store, open-source libraries on GitHub, and npm packages — all built and maintained by Buildeva.</p>
 
-        <!-- Featured product -->
-        <div class="product-featured">
-          <div class="product-featured-content">
-            <div class="product-tag">SaaS · Fintech</div>
-            <h3 class="product-featured-title">Payvra — Invoice automation for SMBs</h3>
-            <p class="product-featured-desc">A founder came to us with a spreadsheet and a vision. In six weeks we shipped a full invoice processing platform with OCR extraction, vendor matching, and a real-time approval workflow. Payvra now processes over 3,000 invoices a month.</p>
-            <div class="product-stats">
-              <div class="product-stat">
-                <span class="product-stat-num">6 wks</span>
-                <span class="product-stat-label">Idea to launch</span>
-              </div>
-              <div class="product-stat">
-                <span class="product-stat-num">3k+</span>
-                <span class="product-stat-label">Invoices / month</span>
-              </div>
-              <div class="product-stat">
-                <span class="product-stat-num">$420k</span>
-                <span class="product-stat-label">Seed raised after MVP</span>
-              </div>
-            </div>
-            <a href="mailto:hello@buildeva.com?subject=I want to build something like Payvra" class="btn btn-primary">Build something like this</a>
-          </div>
-          <div class="product-featured-visual">
-            <div class="mock-window">
-              <div class="mock-titlebar">
-                <span class="mock-dot mock-dot--red"></span>
-                <span class="mock-dot mock-dot--yellow"></span>
-                <span class="mock-dot mock-dot--green"></span>
-                <span class="mock-url">payvra.app/dashboard</span>
-              </div>
-              <div class="mock-body">
-                <div class="mock-sidebar">
-                  <div class="mock-nav-item mock-nav-item--active">Dashboard</div>
-                  <div class="mock-nav-item">Invoices</div>
-                  <div class="mock-nav-item">Vendors</div>
-                  <div class="mock-nav-item">Reports</div>
-                </div>
-                <div class="mock-main">
-                  <div class="mock-stat-row">
-                    <div class="mock-stat-card">
-                      <div class="mock-stat-label">Processed</div>
-                      <div class="mock-stat-val">3,241</div>
-                      <div class="mock-stat-badge mock-stat-badge--up">↑ 24%</div>
-                    </div>
-                    <div class="mock-stat-card">
-                      <div class="mock-stat-label">Pending</div>
-                      <div class="mock-stat-val">18</div>
-                      <div class="mock-stat-badge mock-stat-badge--neutral">Review</div>
-                    </div>
-                  </div>
-                  <div class="mock-table">
-                    <div class="mock-row mock-row--head">
-                      <span>Vendor</span><span>Amount</span><span>Status</span>
-                    </div>
-                    <div class="mock-row">
-                      <span class="mock-vendor"><span class="mock-avatar">A</span>Acme Corp</span>
-                      <span>$4,200</span>
-                      <span class="mock-badge mock-badge--green">Approved</span>
-                    </div>
-                    <div class="mock-row">
-                      <span class="mock-vendor"><span class="mock-avatar mock-avatar--b">B</span>Bright Labs</span>
-                      <span>$1,850</span>
-                      <span class="mock-badge mock-badge--yellow">Pending</span>
-                    </div>
-                    <div class="mock-row">
-                      <span class="mock-vendor"><span class="mock-avatar mock-avatar--c">C</span>Cortex LLC</span>
-                      <span>$9,100</span>
-                      <span class="mock-badge mock-badge--green">Approved</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product grid -->
-        <div class="product-grid">
-
-          <div class="product-card">
-            <div class="product-card-header">
-              <div class="product-icon product-icon--purple">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
-                </svg>
-              </div>
-              <div class="product-tags">
-                <span class="product-pill">HR Tech</span>
-                <span class="product-pill">Mobile</span>
-              </div>
-            </div>
-            <h3 class="product-card-title">Teamlo</h3>
-            <p class="product-card-desc">A mobile-first employee onboarding app for distributed teams. Built in 5 weeks with task checklists, video walkthroughs, and manager dashboards.</p>
-            <div class="product-card-footer">
-              <span class="product-card-time">⏱ 5 weeks</span>
-              <a href="mailto:hello@buildeva.com?subject=Tell me more about Teamlo" class="product-card-link">Read more →</a>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <div class="product-card-header">
-              <div class="product-icon product-icon--blue">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
-                </svg>
-              </div>
-              <div class="product-tags">
-                <span class="product-pill">EdTech</span>
-                <span class="product-pill">Web</span>
-              </div>
-            </div>
-            <h3 class="product-card-title">Classly</h3>
-            <p class="product-card-desc">An online classroom platform for independent tutors — live sessions, homework assignments, payment collection, and student progress tracking in one place.</p>
-            <div class="product-card-footer">
-              <span class="product-card-time">⏱ 7 weeks</span>
-              <a href="mailto:hello@buildeva.com?subject=Tell me more about Classly" class="product-card-link">Read more →</a>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <div class="product-card-header">
-              <div class="product-icon product-icon--green">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                </svg>
-              </div>
-              <div class="product-tags">
-                <span class="product-pill">Fintech</span>
-                <span class="product-pill">API</span>
-              </div>
-            </div>
-            <h3 class="product-card-title">Splitr</h3>
-            <p class="product-card-desc">A bill-splitting and group expense tracker with bank-level reconciliation. Integrated with Stripe and launched as a consumer app in under four weeks.</p>
-            <div class="product-card-footer">
-              <span class="product-card-time">⏱ 4 weeks</span>
-              <a href="mailto:hello@buildeva.com?subject=Tell me more about Splitr" class="product-card-link">Read more →</a>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <div class="product-card-header">
-              <div class="product-icon product-icon--orange">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-                </svg>
-              </div>
-              <div class="product-tags">
-                <span class="product-pill">AI / ML</span>
-                <span class="product-pill">SaaS</span>
-              </div>
-            </div>
-            <h3 class="product-card-title">Draftly</h3>
-            <p class="product-card-desc">An AI-powered content drafting tool for marketing teams. Users paste a brief and get a structured first draft in seconds, built on GPT-4 with a custom fine-tune layer.</p>
-            <div class="product-card-footer">
-              <span class="product-card-time">⏱ 6 weeks</span>
-              <a href="mailto:hello@buildeva.com?subject=Tell me more about Draftly" class="product-card-link">Read more →</a>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <div class="product-card-header">
-              <div class="product-icon product-icon--teal">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
-                </svg>
-              </div>
-              <div class="product-tags">
-                <span class="product-pill">PropTech</span>
-                <span class="product-pill">Mobile</span>
-              </div>
-            </div>
-            <h3 class="product-card-title">Nestmap</h3>
-            <p class="product-card-desc">A property discovery app for renters with neighbourhood scoring, commute time overlays, and saved search alerts. Launched on iOS and Android simultaneously.</p>
-            <div class="product-card-footer">
-              <span class="product-card-time">⏱ 8 weeks</span>
-              <a href="mailto:hello@buildeva.com?subject=Tell me more about Nestmap" class="product-card-link">Read more →</a>
-            </div>
-          </div>
-
-          <div class="product-card product-card--cta">
-            <div class="product-icon product-icon--accent">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-              </svg>
-            </div>
-            <h3 class="product-card-title">Your product here</h3>
-            <p class="product-card-desc">Have an idea? We'd love to add your name to this list. Tell us what you're building — we'll tell you how fast we can ship it.</p>
-            <a href="mailto:hello@buildeva.com" class="btn btn-primary" style="margin-top:auto; align-self:flex-start; font-size:14px; padding:10px 18px;">Start a project →</a>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Solutions Section -->
-    <section class="section section--alt" id="solutions">
-      <div class="container">
-        <div class="section-label">Our products</div>
-        <h2 class="section-title">Product examples</h2>
-        <p class="section-desc">A few products we designed, built, and run ourselves.</p>
-
-        <div class="products-filter" role="tablist" aria-label="Filter products">
-          <button class="products-filter-btn is-active" type="button" data-products-filter="all" aria-pressed="true">All</button>
-          <button class="products-filter-btn" type="button" data-products-filter="applications" aria-pressed="false">Applications</button>
-          <button class="products-filter-btn" type="button" data-products-filter="others" aria-pressed="false">Others</button>
-        </div>
-
-        <div class="solutions-grid">
-
-          <article class="solution-card solution-card--featured" data-product-category="applications">
-            <button class="solution-toggle" type="button" aria-expanded="false" aria-controls="totalnotePanel">
-              <div class="solution-top">
-                <div class="solution-icon">📱</div>
-                <div>
-                  <h3 class="solution-title">TotalNote</h3>
-                  <p class="solution-subtitle">iOS productivity app</p>
-                </div>
-              </div>
-              <span class="solution-chevron" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-              </span>
-            </button>
-            <div class="solution-panel" id="totalnotePanel" hidden>
-              <p class="solution-desc">A notes app that calculates totals while you type.</p>
-              <ul class="solution-list">
-                <li>Real-time totals in notes</li>
-                <li>iCloud sync across devices</li>
-                <li>Fast, clean writing experience</li>
-              </ul>
-              <a href="https://apps.apple.com/app/id0000000000" class="solution-appstore-link" aria-label="TotalNote App Store link">
-                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" class="solution-appstore-badge" />
-              </a>
-            </div>
-          </article>
-
-          <article class="solution-card" data-product-category="applications">
-            <button class="solution-toggle" type="button" aria-expanded="false" aria-controls="focusflowPanel">
-              <div class="solution-top">
-                <div class="solution-icon">🌐</div>
-                <div>
-                  <h3 class="solution-title">FocusFlow</h3>
-                  <p class="solution-subtitle">Web productivity tool</p>
-                </div>
-              </div>
-              <span class="solution-chevron" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-              </span>
-            </button>
-            <div class="solution-panel" id="focusflowPanel" hidden>
-              <p class="solution-desc">A lightweight workspace for planning weekly priorities and tracking progress.</p>
-            </div>
-          </article>
-
-          <article class="solution-card" data-product-category="others">
-            <button class="solution-toggle" type="button" aria-expanded="false" aria-controls="briefkitPanel">
-              <div class="solution-top">
-                <div class="solution-icon">🧩</div>
-                <div>
-                  <h3 class="solution-title">BriefKit</h3>
-                  <p class="solution-subtitle">Project brief assistant</p>
-                </div>
-              </div>
-              <span class="solution-chevron" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-              </span>
-            </button>
-            <div class="solution-panel" id="briefkitPanel" hidden>
-              <p class="solution-desc">A simple tool that turns early product ideas into clear, build-ready briefs.</p>
-            </div>
-          </article>
-
-        </div>
+        <!-- Product grid — populated from data.js via renderProductCards() in script.js -->
+        <div class="product-grid" id="productGrid"></div>
       </div>
     </section>
 
@@ -460,49 +190,8 @@
     <!-- Terms & Privacy -->
     <section class="section section--alt" id="terms">
       <div class="container">
-        <div class="terms-stack">
-
-          <details class="terms-accordion" data-hash="terms-service">
-            <summary class="terms-summary">
-              Terms of Service
-              <span class="terms-chevron" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-              </span>
-            </summary>
-            <div class="terms-body">
-              <p>By using Buildeva services, you agree to the following basic terms:</p>
-              <ul>
-                <li>Project scope, timeline, and deliverables are defined in writing before development starts.</li>
-                <li>Client provides timely feedback and approvals to keep milestones on track.</li>
-                <li>All invoices are payable according to agreed payment terms.</li>
-                <li>Unless otherwise stated, final project code and assets are transferred to the client after full payment.</li>
-                <li>Either party may end the engagement with written notice, with payment due for completed work.</li>
-                <li>Buildeva is not liable for indirect damages, lost profits, or third-party service outages.</li>
-              </ul>
-              <p class="terms-note">For a full legal agreement, contact us at <a href="mailto:hello@buildeva.com">hello@buildeva.com</a>.</p>
-            </div>
-          </details>
-
-          <details class="terms-accordion" data-hash="privacy-policy">
-            <summary class="terms-summary">
-              Privacy Policy
-              <span class="terms-chevron" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-              </span>
-            </summary>
-            <div class="terms-body" id="privacy-policy">
-              <p>We collect only the information you share when contacting us (for example via email).</p>
-              <ul>
-                <li>No account is required to browse this website.</li>
-                <li>Project materials you share are treated as confidential.</li>
-                <li>We do not sell personal data to third parties.</li>
-                <li>You can request data deletion by emailing us.</li>
-              </ul>
-              <p class="terms-note">For full details, contact <a href="mailto:hello@buildeva.com">hello@buildeva.com</a>.</p>
-            </div>
-          </details>
-
-        </div>
+        <!-- Legal accordions — populated from data.js via renderLegalSections() in script.js -->
+        <div class="terms-stack" id="legalStack"></div>
       </div>
     </section>
 
@@ -512,7 +201,7 @@
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <span class="logo-mark logo-mark--sm">B</span>
+        <img src="logo.png" alt="Buildeva" class="logo-img logo-img--sm" />
         <span class="footer-copy">© <span id="currentYear"></span> Buildeva. All rights reserved.</span>
       </div>
       <div class="footer-links">
@@ -525,6 +214,7 @@
     </div>
   </footer>
 
+  <script src="data.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
