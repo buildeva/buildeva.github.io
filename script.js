@@ -1,54 +1,117 @@
-/* ── Theme toggle ── */
-const html = document.documentElement;
-const toggleBtn = document.getElementById('themeToggle');
+/* ─────────────────────────────────────────
+   Theme toggle
+   ───────────────────────────────────────── */
+const html       = document.documentElement;
+const toggleBtn  = document.getElementById('themeToggle');
 
-function getStoredTheme() {
-  return localStorage.getItem('repski-theme');
-}
-
-function getSystemTheme() {
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-}
+function getStoredTheme()  { return localStorage.getItem('buildeva-theme'); }
+function getSystemTheme()  { return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
 
 function applyTheme(theme) {
   html.setAttribute('data-theme', theme);
-  localStorage.setItem('repski-theme', theme);
+  localStorage.setItem('buildeva-theme', theme);
 }
 
-// Init on load
-(function () {
-  const stored = getStoredTheme();
-  applyTheme(stored || getSystemTheme());
-})();
+// Apply saved or system theme immediately (before paint)
+applyTheme(getStoredTheme() || getSystemTheme());
 
-// Toggle on click
+// Toggle on button click
 toggleBtn.addEventListener('click', () => {
-  const current = html.getAttribute('data-theme');
-  applyTheme(current === 'dark' ? 'light' : 'dark');
+  const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  applyTheme(next);
 });
 
-// Sync if system pref changes and user hasn't manually set one
+// Follow system preference if user hasn't manually chosen
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-  if (!getStoredTheme()) {
-    applyTheme(e.matches ? 'dark' : 'light');
-  }
+  if (!getStoredTheme()) applyTheme(e.matches ? 'dark' : 'light');
 });
 
-/* ── Smooth active nav highlight ── */
+
+/* ─────────────────────────────────────────
+   Hamburger / mobile menu
+   ───────────────────────────────────────── */
+const hamburger  = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+const header     = document.getElementById('header');
+
+function openMenu() {
+  hamburger.classList.add('is-open');
+  mobileMenu.classList.add('is-open');
+  header.classList.add('menu-open');
+  hamburger.setAttribute('aria-expanded', 'true');
+  mobileMenu.setAttribute('aria-hidden', 'false');
+}
+
+function closeMenu() {
+  hamburger.classList.remove('is-open');
+  mobileMenu.classList.remove('is-open');
+  header.classList.remove('menu-open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  mobileMenu.setAttribute('aria-hidden', 'true');
+}
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.contains('is-open') ? closeMenu() : openMenu();
+});
+
+// Close when a mobile nav link is tapped
+document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+  link.addEventListener('click', closeMenu);
+});
+
+// Close on outside click
+document.addEventListener('click', (e) => {
+  if (!header.contains(e.target)) closeMenu();
+});
+
+
+/* ─────────────────────────────────────────
+   Dynamic Island scroll behavior
+   Full-width at top → floating pill on scroll
+   ───────────────────────────────────────── */
+const FLOAT_THRESHOLD = 60; // px scrolled before morphing
+let   lastScrollY     = window.scrollY;
+let   ticking         = false;
+
+function updateHeader() {
+  const scrolled = window.scrollY > FLOAT_THRESHOLD;
+  if (scrolled) {
+    header.classList.add('is-floating');
+  } else {
+    header.classList.remove('is-floating');
+    // Also close mobile menu when snapping back to full-width
+    closeMenu();
+  }
+  lastScrollY = window.scrollY;
+  ticking = false;
+}
+
+window.addEventListener('scroll', () => {
+  if (!ticking) {
+    window.requestAnimationFrame(updateHeader);
+    ticking = true;
+  }
+}, { passive: true });
+
+// Set initial state in case page loads mid-scroll
+updateHeader();
+
+
+/* ─────────────────────────────────────────
+   Active nav highlight on scroll
+   ───────────────────────────────────────── */
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-link');
 
-const observer = new IntersectionObserver(
+const sectionObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
+        const id = '#' + entry.target.id;
         navLinks.forEach((link) => {
-          link.style.color = '';
-          link.style.background = '';
-          if (link.getAttribute('href') === '#' + entry.target.id) {
-            link.style.color = 'var(--accent)';
-            link.style.background = 'var(--accent-light)';
-          }
+          const active = link.getAttribute('href') === id;
+          link.style.color      = active ? 'var(--accent)' : '';
+          link.style.background = active ? 'var(--accent-light)' : '';
         });
       }
     });
@@ -56,164 +119,102 @@ const observer = new IntersectionObserver(
   { threshold: 0.4 }
 );
 
-sections.forEach((s) => observer.observe(s));
+sections.forEach((s) => sectionObserver.observe(s));
 
-/* ── Card entrance animation ── */
-const cards = document.querySelectorAll('.app-card, .support-card, .privacy-item');
 
-const cardObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-        cardObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
-);
+/* ─────────────────────────────────────────
+   Current year in footer
+   ───────────────────────────────────────── */
+const yearEl = document.getElementById('currentYear');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// Only animate if reduced motion is not preferred
-if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  cards.forEach((card, i) => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(16px)';
-    card.style.transition = `opacity 0.4s ease ${i * 0.06}s, transform 0.4s ease ${i * 0.06}s, box-shadow 0.2s ease, background 0.2s ease`;
-    cardObserver.observe(card);
-  });
-}
 
-/* ── Solutions collapse ── */
-const collapsibleToggles = document.querySelectorAll('.solution-toggle[aria-controls]');
-
-function openPanel(toggle, panel) {
-  panel.hidden = false;
-  panel.classList.add('is-open');
-  panel.style.maxHeight = `${panel.scrollHeight}px`;
-  toggle.setAttribute('aria-expanded', 'true');
-}
-
-function closePanel(toggle, panel) {
-  panel.style.maxHeight = `${panel.scrollHeight}px`;
-  requestAnimationFrame(() => {
-    panel.classList.remove('is-open');
-    panel.style.maxHeight = '0px';
-  });
-  toggle.setAttribute('aria-expanded', 'false');
-
-  panel.addEventListener('transitionend', function onEnd(e) {
-    if (e.propertyName !== 'max-height') return;
-    if (toggle.getAttribute('aria-expanded') === 'false') {
-      panel.hidden = true;
-    }
-    panel.removeEventListener('transitionend', onEnd);
-  });
-}
-
-collapsibleToggles.forEach((toggle) => {
-  const panelId = toggle.getAttribute('aria-controls');
-  const panel = panelId ? document.getElementById(panelId) : null;
-  if (!panel) return;
-
-  if (toggle.getAttribute('aria-expanded') !== 'true') {
-    panel.hidden = true;
-    panel.style.maxHeight = '0px';
-  }
-
-  toggle.addEventListener('click', () => {
-    const expanded = toggle.getAttribute('aria-expanded') === 'true';
-    if (expanded) {
-      closePanel(toggle, panel);
-    } else {
-      openPanel(toggle, panel);
-    }
-  });
-});
-
-window.addEventListener('resize', () => {
-  collapsibleToggles.forEach((toggle) => {
-    if (toggle.getAttribute('aria-expanded') !== 'true') return;
-    const panelId = toggle.getAttribute('aria-controls');
-    const panel = panelId ? document.getElementById(panelId) : null;
+/* ─────────────────────────────────────────
+   Solutions accordion (custom toggle)
+   ───────────────────────────────────────── */
+document.querySelectorAll('.solution-toggle').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    const panelId  = btn.getAttribute('aria-controls');
+    const panel    = document.getElementById(panelId);
     if (!panel) return;
-    panel.style.maxHeight = `${panel.scrollHeight}px`;
+
+    if (expanded) {
+      btn.setAttribute('aria-expanded', 'false');
+      panel.hidden = true;
+    } else {
+      btn.setAttribute('aria-expanded', 'true');
+      panel.hidden = false;
+    }
   });
 });
 
-/* ── Products filter ── */
-const productFilterButtons = document.querySelectorAll('[data-products-filter]');
-const productCards = document.querySelectorAll('.solution-card[data-product-category]');
 
-function setActiveProductFilter(selectedButton) {
-  productFilterButtons.forEach((button) => {
-    const isActive = button === selectedButton;
-    button.classList.toggle('is-active', isActive);
-    button.setAttribute('aria-pressed', String(isActive));
-  });
-}
+/* ─────────────────────────────────────────
+   Products filter
+   ───────────────────────────────────────── */
+const filterBtns = document.querySelectorAll('.products-filter-btn');
+const solutionCards = document.querySelectorAll('.solution-card[data-product-category]');
 
-function applyProductFilter(filterKey) {
-  productCards.forEach((card) => {
-    const category = card.dataset.productCategory;
-    const shouldShow = filterKey === 'all' || category === filterKey;
-    card.classList.toggle('solution-card--hidden', !shouldShow);
-  });
-}
+filterBtns.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const filter = btn.dataset.productsFilter;
 
-if (productFilterButtons.length && productCards.length) {
-  productFilterButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const filterKey = button.dataset.productsFilter || 'all';
-      setActiveProductFilter(button);
-      applyProductFilter(filterKey);
+    // Update active button state
+    filterBtns.forEach((b) => {
+      b.classList.remove('is-active');
+      b.setAttribute('aria-pressed', 'false');
+    });
+    btn.classList.add('is-active');
+    btn.setAttribute('aria-pressed', 'true');
+
+    // Show/hide cards
+    solutionCards.forEach((card) => {
+      const cat = card.dataset.productCategory;
+      const show = filter === 'all' || cat === filter;
+      card.style.display = show ? '' : 'none';
     });
   });
-
-  const defaultButton = document.querySelector('[data-products-filter="all"]');
-  if (defaultButton) {
-    setActiveProductFilter(defaultButton);
-    applyProductFilter('all');
-  }
-}
-
-/* ── Legal accordion hash marker ── */
-const legalAccordions = document.querySelectorAll('details[data-hash]');
-
-function openAccordionFromHash(hashValue) {
-  legalAccordions.forEach((detailsEl) => {
-    const marker = detailsEl.dataset.hash;
-    if (!marker) return;
-    if (marker === hashValue) {
-      detailsEl.open = true;
-      detailsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  });
-}
-
-legalAccordions.forEach((detailsEl) => {
-  detailsEl.addEventListener('toggle', () => {
-    const marker = detailsEl.dataset.hash;
-    if (!marker) return;
-    if (detailsEl.open) {
-      history.replaceState(null, '', `#${marker}`);
-    }
-  });
 });
 
-const initialHash = window.location.hash.replace('#', '');
-if (initialHash) {
-  openAccordionFromHash(initialHash);
-}
 
-window.addEventListener('hashchange', () => {
+/* ─────────────────────────────────────────
+   Hash-based deep link for terms/privacy
+   ───────────────────────────────────────── */
+function openAccordionByHash() {
   const hash = window.location.hash.replace('#', '');
   if (!hash) return;
-  openAccordionFromHash(hash);
-});
+  const target = document.querySelector(`details[data-hash="${hash}"]`);
+  if (target) {
+    target.open = true;
+    setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+  }
+}
 
-/* ── Footer year ── */
-const yearEl = document.getElementById('currentYear');
-if (yearEl) {
-  yearEl.textContent = String(new Date().getFullYear());
+window.addEventListener('hashchange', openAccordionByHash);
+openAccordionByHash();
+
+
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const cards = document.querySelectorAll('.app-card, .support-card, .privacy-item, .product-card');
+
+  const cardObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity   = '1';
+          entry.target.style.transform = 'translateY(0)';
+          cardObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.08, rootMargin: '0px 0px -32px 0px' }
+  );
+
+  cards.forEach((card, i) => {
+    card.style.opacity    = '0';
+    card.style.transform  = 'translateY(18px)';
+    card.style.transition = `opacity 0.4s ease ${i * 0.055}s, transform 0.4s ease ${i * 0.055}s, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease`;
+    cardObserver.observe(card);
+  });
 }
